@@ -1,0 +1,9 @@
+services:
+  latex:
+    image: texlive/texlive:latest
+    container_name: latex-cv
+    volumes:
+      - $PWD/latex:/doc
+      - $PWD/outputs:/outputs
+    working_dir: /doc
+    entrypoint: ["make"]
